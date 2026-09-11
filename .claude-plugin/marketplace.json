@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "firmafind",
+  "description": "Austrian company data API — Firmenbuch, financials, insolvencies and trade licenses as structured JSON via skill + hosted MCP server.",
+  "version": "1.0.0",
+  "owner": {
+    "name": "Paul Lotz",
+    "email": "office@firmafind.at",
+    "url": "https://github.com/firmafind"
+  },
+  "plugins": [
+    {
+      "name": "firmafind",
+      "source": "./plugins/firmafind",
+      "displayName": "firmafind",
+      "description": "Search, verify and retrieve structured Austrian company data (Firmenbuch, financials, edicts, sanctions, monitoring) via REST + hosted MCP server.",
+      "version": "2.5.0",
+      "author": {
+        "name": "Paul Lotz",
+        "url": "https://github.com/firmafind"
+      },
+      "homepage": "https://firmafind.at/docs",
+      "repository": "https://github.com/firmafind/claude-plugin",
+      "license": "MIT",
+      "keywords": [
+        "austria",
+        "firmenbuch",
+        "company-register",
+        "mcp",
+        "due-diligence"
+      ],
+      "category": "business-data",
+      "tags": ["austria", "firmenbuch", "company-register", "financials", "mcp"]
+    }
+  ]
+}

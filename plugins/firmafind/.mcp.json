@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "firmafind": {
+      "type": "http",
+      "url": "https://firmafind.at/api/mcp",
+      "headers": {
+        "x-api-key": "${user_config.apiKey}"
+      }
+    }
+  }
+}

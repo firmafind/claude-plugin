@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "firmafind",
+  "displayName": "firmafind",
+  "description": "Search, verify and retrieve structured Austrian company data (Firmenbuch, financials, edicts, sanctions, monitoring) via REST + hosted MCP server.",
+  "version": "2.5.0",
+  "author": {
+    "name": "Paul Lotz",
+    "url": "https://github.com/firmafind"
+  },
+  "homepage": "https://firmafind.at/docs",
+  "repository": "https://github.com/firmafind/claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "austria",
+    "firmenbuch",
+    "company-register",
+    "mcp",
+    "due-diligence"
+  ],
+  "mcpServers": "./.mcp.json",
+  "userConfig": {
+    "apiKey": {
+      "type": "string",
+      "title": "firmafind API key",
+      "description": "Your firmafind API key from https://firmafind.at/dashboard/keys (ff_live_...). Required for REST + MCP calls.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}
