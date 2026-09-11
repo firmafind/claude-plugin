@@ -10,7 +10,7 @@
   },
   "homepage": "https://firmafind.at/docs",
   "repository": "https://github.com/firmafind/claude-plugin",
-  "license": "MIT",
+  "license": "FSL-1.1-Apache-2.0",
   "keywords": [
     "austria",
     "firmenbuch",

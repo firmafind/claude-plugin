@@ -2,7 +2,7 @@
 name: firmafind
 description: |
  Unified API for Austrian companies. Search, verify and retrieve structured company data from Austrian register sources through one API. Company register data, available filings, VAT validation, email validation and insolvency notices. One API key. One JSON format. Built for product workflows, internal tools and AI agents.
-license: MIT
+license: FSL-1.1-Apache-2.0
 version: "2.5.0"
 ---
 

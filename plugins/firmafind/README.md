@@ -3,7 +3,7 @@
 Search, verify and retrieve structured Austrian company data
 (Firmenbuch/company register, financials, filings, edicts/insolvencies,
 trade licenses, VAT/email validation, EU sanctions screening, monitoring)
-from [firmafind.at](https://firmafind.at) — via skill + hosted MCP server.
+from [firmafind.at](https://firmafind.at) - via skill + hosted MCP server.
 
 ## Install
 
@@ -30,12 +30,12 @@ Update later with:
 
 ## Contents
 
-- `skills/firmafind/SKILL.md` — agent guidance: REST quick reference,
+- `skills/firmafind/SKILL.md` - agent guidance: REST quick reference,
   MCP tool list, auth, credits & error handling. Mirror of
   `.agents/skills/firmafind/SKILL.md` (keep both in sync, same version).
-- `.mcp.json` — hosted MCP server (`https://firmafind.at/api/mcp`,
+- `.mcp.json` - hosted MCP server (`https://firmafind.at/api/mcp`,
   Streamable HTTP) using `${user_config.apiKey}`.
-- `.claude-plugin/plugin.json` — plugin manifest (name, version,
+- `.claude-plugin/plugin.json` - plugin manifest (name, version,
   `userConfig.apiKey` prompt).
 
 ## Versioning

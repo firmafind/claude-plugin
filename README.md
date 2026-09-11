@@ -1,6 +1,6 @@
 # firmafind Claude Plugin Marketplace
 
-Claude Code marketplace for [firmafind.at](https://firmafind.at) — structured Austrian company data (Firmenbuch/company register, financials, filings, edicts/insolvencies, trade licenses, VAT/email validation, EU sanctions screening, monitoring) via skill + hosted MCP server.
+Claude Code marketplace for [firmafind.at](https://firmafind.at) - structured Austrian company data (Firmenbuch/company register, financials, filings, edicts/insolvencies, trade licenses, VAT/email validation, EU sanctions screening, monitoring) via skill + hosted MCP server.
 
 ## Install
 
@@ -16,5 +16,5 @@ You will be prompted for your **firmafind API key** (`ff_live_...` from https://
 
 ## Contents
 
-- `plugins/firmafind/` — the plugin (see its [README](plugins/firmafind/README.md))
-- `.claude-plugin/marketplace.json` — marketplace manifest
+- `plugins/firmafind/` - the plugin (see its [README](plugins/firmafind/README.md))
+- `.claude-plugin/marketplace.json` - marketplace manifest
