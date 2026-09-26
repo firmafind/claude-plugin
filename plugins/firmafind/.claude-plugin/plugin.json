@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "firmafind",
   "displayName": "firmafind",
-  "description": "Search, verify and retrieve structured Austrian company data (Firmenbuch, financials, edicts, sanctions, monitoring) via REST + hosted MCP server.",
-  "version": "2.5.0",
+  "description": "Search, verify and retrieve structured Austrian company data (Firmenbuch, financials, edicts, monitoring) via REST + hosted MCP server.",
+  "version": "2.5.1",
   "author": {
     "name": "Paul Lotz",
     "url": "https://github.com/firmafind"

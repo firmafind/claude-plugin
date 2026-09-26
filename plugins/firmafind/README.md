@@ -2,7 +2,7 @@
 
 Search, verify and retrieve structured Austrian company data
 (Firmenbuch/company register, financials, filings, edicts/insolvencies,
-trade licenses, VAT/email validation, EU sanctions screening, monitoring)
+trade licenses, VAT/email validation, monitoring)
 from [firmafind.at](https://firmafind.at) - via skill + hosted MCP server.
 
 ## Install
