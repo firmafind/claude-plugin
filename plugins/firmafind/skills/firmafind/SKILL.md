@@ -62,11 +62,11 @@ Connect Claude Desktop, Cursor, OpenCode, or Windsurf directly to the hosted ser
 13. `unwatch_company`: Remove an Austrian company from a monitoring watchlist.
 14. `list_monitor_events`: Retrieve timeline events (filings, status changes, insolvency notices) for a monitor.
 15. `list_monitor_webhooks`: List webhook push subscriptions for a monitor.
-16. `create_monitor_webhook`: Subscribe an HTTPS endpoint to receive signed real-time business events (HMAC-SHA256, optional event type filter).
+16. `create_monitor_webhook`: Subscribe an HTTPS endpoint to receive signed business events (HMAC-SHA256, optional event type filter).
 17. `delete_monitor_webhook`: Remove a webhook subscription from a monitor.
 18. `test_monitor_webhook`: Dispatch a signed test event to verify endpoint connectivity.
 19. `list_new_company_subscriptions`: List all active new company registration webhook subscriptions.
-20. `create_new_company_subscription`: Subscribe an HTTPS webhook to receive real-time notifications for newly registered Austrian companies (optional filters by legal form, court, state).
+20. `create_new_company_subscription`: Subscribe an HTTPS webhook to receive batch notifications for newly registered Austrian companies (optional filters by legal form, court, state).
 21. `delete_new_company_subscription`: Remove a new company registration webhook subscription.
 
 ## REST API quick reference
