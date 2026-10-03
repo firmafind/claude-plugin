@@ -3,7 +3,7 @@ name: firmafind
 description: |
  Unified API for Austrian companies. Search, verify and retrieve structured company data from Austrian register sources through one API. Company register data, available filings, VAT validation, email validation and insolvency notices. One API key. One JSON format. Built for product workflows, internal tools and AI agents.
 license: FSL-1.1-Apache-2.0
-version: "2.5.1"
+version: "2.7.0"
 ---
 
 # firmafind Agent Skill
@@ -21,6 +21,9 @@ Target domain:
 - **Company Registration Numbers (Firmenbuchnummer / `fnr`)**: Numbers followed by a single lowercase letter, e.g. `123456x` or `fn123456x`.
 - **Legal Forms**: `GmbH` (Gesellschaft mit beschränkter Haftung), `AG` (Aktiengesellschaft), `KG`, `OG`, `e.U.` (eingetragenes Einzelunternehmen).
 - **Data Points**: Management structure (Geschäftsführer, Prokuristen), share capital, registered seat, annual financial reports (Jahresabschlüsse), insolvency notices (Edikte), and company change monitoring.
+- **Monitoring Modes**:
+  - **Watchlist Monitoring (`/api/monitors`)**: Monitor specific companies by Firmenbuchnummer for balance sheet filings, management events, seat/address changes, and insolvency notices.
+  - **New Company Feed (`/api/monitors/new-companies/subscriptions`)**: Webhook stream for newly registered Austrian companies with optional filtering by legal form (`GmbH`, `FlexKapG`, `e.U.`), registration court, or state.
 
 ## Authentication
 
@@ -62,6 +65,9 @@ Connect Claude Desktop, Cursor, OpenCode, or Windsurf directly to the hosted ser
 16. `create_monitor_webhook`: Subscribe an HTTPS endpoint to receive signed real-time business events (HMAC-SHA256, optional event type filter).
 17. `delete_monitor_webhook`: Remove a webhook subscription from a monitor.
 18. `test_monitor_webhook`: Dispatch a signed test event to verify endpoint connectivity.
+19. `list_new_company_subscriptions`: List all active new company registration webhook subscriptions.
+20. `create_new_company_subscription`: Subscribe an HTTPS webhook to receive real-time notifications for newly registered Austrian companies (optional filters by legal form, court, state).
+21. `delete_new_company_subscription`: Remove a new company registration webhook subscription.
 
 ## REST API quick reference
 
@@ -83,13 +89,16 @@ Connect Claude Desktop, Cursor, OpenCode, or Windsurf directly to the hosted ser
 | `/api/vat/validate` | GET | VAT validation via VIES |
 | `/api/email/validate` | GET/POST | Email validation & deliverability |
 | `/api/monitors` | GET/POST | List and create company monitors |
-| `/api/monitors/{id}` | GET/DELETE | Monitor details with companies, or delete monitor |
-| `/api/monitors/{id}/companies` | POST | Add companies to monitor (bulk) |
+| `/api/monitors/{id}` | GET/PATCH/DELETE | Monitor details with companies, update metadata, or delete monitor |
+| `/api/monitors/{id}/companies` | GET/POST | List monitored companies (paginated + search) or add companies (bulk) |
 | `/api/monitors/{id}/companies/{fnr}` | DELETE | Remove company from monitor |
 | `/api/monitors/{id}/events` | GET | Monitor event stream & timeline with cursor pagination |
 | `/api/monitors/{id}/subscriptions` | GET/POST | List and create webhook push subscriptions |
-| `/api/monitors/{id}/subscriptions/{subId}` | DELETE | Delete webhook subscription |
+| `/api/monitors/{id}/subscriptions/{subId}` | PATCH/DELETE | Update webhook subscription (URL, filters, secret) or delete |
 | `/api/monitors/{id}/subscriptions/{subId}/test` | POST | Send signed test webhook event |
+| `/api/monitors/new-companies/subscriptions` | GET/POST | List and create new company registration webhooks |
+| `/api/monitors/new-companies/subscriptions/{id}` | PATCH/DELETE | Update or delete new company webhook |
+| `/api/monitors/new-companies/subscriptions/{id}/test` | POST | Send signed test new company webhook event |
 
 ## Error handling and credits
 
