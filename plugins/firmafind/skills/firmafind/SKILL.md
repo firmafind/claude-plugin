@@ -1,9 +1,9 @@
 ---
 name: firmafind
 description: |
- Unified API for Austrian companies. Search, verify and retrieve structured company data from Austrian register sources through one API. Company register data, available filings, VAT validation, email validation and insolvency notices. One API key. One JSON format. Built for product workflows, internal tools and AI agents.
+ Unified API for Austrian companies. Search, verify and retrieve structured company data from Austrian register sources through one API. Company register data, available filings, VAT validation and insolvency notices. One API key. One JSON format. Built for product workflows, internal tools and AI agents.
 license: MIT
-version: "2.9.0"
+version: "2.10.0"
 ---
 
 # firmafind Agent Skill
@@ -14,7 +14,7 @@ This skill guides AI agents in querying Austrian business register data, retriev
 
 firmafind converts Austrian Firmenbuch and Edikte data into structured JSON APIs and an agent-ready hosted MCP server.
 
-Unified API for Austrian companies. Search, verify and retrieve structured company data from Austrian register sources through one API. Company register data, available filings, VAT validation, email validation, insolvency notices, and company monitoring. One API key. One JSON format.
+Unified API for Austrian companies. Search, verify and retrieve structured company data from Austrian register sources through one API. Company register data, available filings, VAT validation, insolvency notices, and company monitoring. One API key. One JSON format.
 
 Target domain:
 
@@ -56,23 +56,22 @@ Connect Claude Desktop, Cursor, OpenCode, or Windsurf directly to the hosted ser
 7. `get_company_financials`: Normalized published annual financial statements (up to 5 periods, metrics, ratios, changes, quality + evidence). Costs 15 credits for years=1, 25 for years=2..5.
 8. `list_edikte`: Search Austrian court edicts for corporate insolvencies (companies only, no personal data).
 9. `get_edict_details`: Publication details for a company insolvency or court notice (companies only, no personal data).
-10. `validate_email`: Validate email deliverability (syntax, MX/DNS, disposable, role-based, typo suggestions).
-11. `list_monitors`: List all company monitors (watchlists), watched companies, and plan quota limits.
-12. `watch_company`: Add an Austrian company (by Firmenbuchnummer) to a monitoring watchlist.
-13. `unwatch_company`: Remove an Austrian company from a monitoring watchlist.
-14. `list_monitor_events`: Retrieve timeline events (filings, status changes, insolvency notices) for a monitor.
-15. `list_monitor_webhooks`: List webhook push subscriptions for a monitor.
-16. `create_monitor_webhook`: Subscribe an HTTPS endpoint to receive signed business events (HMAC-SHA256, optional event type filter).
-17. `delete_monitor_webhook`: Remove a webhook subscription from a monitor.
-18. `test_monitor_webhook`: Dispatch a signed test event to verify endpoint connectivity.
-19. `list_new_company_subscriptions`: List all active new company registration webhook subscriptions.
-20. `create_new_company_subscription`: Subscribe an HTTPS webhook to receive batch notifications for newly registered Austrian companies (optional filters by legal form, court, state).
-21. `delete_new_company_subscription`: Remove a new company registration webhook subscription.
+10. `list_monitors`: List all company monitors (watchlists), watched companies, and plan quota limits.
+11. `watch_company`: Add an Austrian company (by Firmenbuchnummer) to a monitoring watchlist.
+12. `unwatch_company`: Remove an Austrian company from a monitoring watchlist.
+13. `list_monitor_events`: Retrieve timeline events (filings, status changes, insolvency notices) for a monitor.
+14. `list_monitor_webhooks`: List webhook push subscriptions for a monitor.
+15. `create_monitor_webhook`: Subscribe an HTTPS endpoint to receive signed business events (HMAC-SHA256, optional event type filter).
+16. `delete_monitor_webhook`: Remove a webhook subscription from a monitor.
+17. `test_monitor_webhook`: Dispatch a signed test event to verify endpoint connectivity.
+18. `list_new_company_subscriptions`: List all active new company registration webhook subscriptions.
+19. `create_new_company_subscription`: Subscribe an HTTPS webhook to receive batch notifications for newly registered Austrian companies (optional filters by legal form, court, state).
+20. `delete_new_company_subscription`: Remove a new company registration webhook subscription.
 
-22. `discover_companies` (private pilot only): Paginated company discovery by ÖNACE, trade evidence, region and registration date.
-23. `get_discovered_company` (private pilot only): Indexed company and all classification evidence.
+21. `discover_companies` (private pilot only): Paginated company discovery by ÖNACE, trade evidence, region and registration date.
+22. `get_discovered_company` (private pilot only): Indexed company and all classification evidence.
 
-Tools 22–23 are absent when `FEATURE_INDUSTRY_DISCOVERY=false`; when enabled they also require the user’s existing `industry_discovery` rollout access. Do not call or probe pilot endpoints unless the operator has confirmed that access is enabled.
+Tools 21–22 are absent when `FEATURE_INDUSTRY_DISCOVERY=false`; when enabled they also require the user’s existing `industry_discovery` rollout access. Do not call or probe pilot endpoints unless the operator has confirmed that access is enabled.
 
 ## REST API quick reference
 
@@ -92,7 +91,6 @@ Tools 22–23 are absent when `FEATURE_INDUSTRY_DISCOVERY=false`; when enabled t
 | `/api/edikte` | GET | Search company insolvency edicts (no personal data) |
 | `/api/edikte/{type}/{id}` | GET | Company edikt details (no personal data) |
 | `/api/vat/validate` | GET | VAT validation via VIES |
-| `/api/email/validate` | GET/POST | Email validation & deliverability |
 | `/api/monitors` | GET/POST | List and create company monitors |
 | `/api/monitors/{id}` | GET/PATCH/DELETE | Monitor details with companies, update metadata, or delete monitor |
 | `/api/monitors/{id}/companies` | GET/POST | List monitored companies (paginated + search) or add companies (bulk) |
